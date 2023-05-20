@@ -51,7 +51,11 @@
     "tagmaster": "./bin/tagmaster.js"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint:audit": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier:audit": "prettier",
+    "prettier:format": "prettier --write"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -61,6 +65,12 @@
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-typescript": "^11.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^5.3.0",
     "tslib": "^2.5.2",
