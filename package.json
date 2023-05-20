@@ -1,7 +1,50 @@
 {
-  "name": "tagmaster",
+  "name": "@imraan-hendricks/tagmaster",
   "version": "0.0.0",
+  "author": {
+    "name": "Imraan-Hendricks",
+    "email": "support@imraanhendricks.com"
+  },
   "description": "Revolutionize your development workflow with TagMaster and experience bulletproof commits, accelerated releases, and seamless versioning!",
-  "author": "Imraan-Hendricks",
-  "license": "MIT"
+  "private": false,
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/Imraan-Hendricks/tagmaster#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Imraan-Hendricks/tagmaster"
+  },
+  "bugs": {
+    "url": "https://github.com/Imraan-Hendricks/tagmaster/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "TagMaster",
+    "conventional commits",
+    "commit management",
+    "release management",
+    "tag management",
+    "semantic versioning",
+    "linting",
+    "validation",
+    "pre-releases",
+    "alpha",
+    "beta",
+    "CI/CD",
+    "npm package",
+    "development workflow",
+    "code quality",
+    "code collaboration",
+    "version control",
+    "commit guidelines",
+    "CHANGELOG",
+    "release notes"
+  ]
 }

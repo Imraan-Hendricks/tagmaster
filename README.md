@@ -18,6 +18,8 @@ Supercharge your commit management and release workflows with TagMaster, an all-
 - **Pre-releases Support**: Seamlessly handle pre-release versions such as alpha and beta, facilitating effective testing and gathering early feedback.
 - **Auto-generated CHANGELOG.md**: Generate a comprehensive changelog file that documents all the changes made in each release, making it easy to track and communicate the evolution of your project.
 - **License Generation**: Automatically generate a LICENSE file, such as the MIT License, providing clarity on the licensing terms of your project.
+- **Small Size, Big Impact**: TagMaster is optimized for efficiency and comes with a small footprint, allowing you to integrate it seamlessly into your projects without bloating your dependencies.
+- **One Install, One Script**: With TagMaster, you get everything you need in a single npm package. It's a lightweight and streamlined solution, designed to simplify your workflow without unnecessary complexity.
 
 ## Installation
 
