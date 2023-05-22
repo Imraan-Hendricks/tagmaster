@@ -26,13 +26,12 @@ module.exports = {
         ignoreGlobals: false,
       },
     ],
-    indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
     semi: ['error', 'always'],
     '@typescript-eslint/no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ],
+    'prettier/prettier': ['error', { ...require('./.prettierrc') }],
   },
 };

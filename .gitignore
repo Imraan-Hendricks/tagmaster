@@ -6,9 +6,6 @@
 # testing
 /coverage
 
-# husky
-/.husky/_
-
 # production
 /build
 /dist

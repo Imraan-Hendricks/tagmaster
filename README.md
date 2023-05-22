@@ -61,21 +61,15 @@ You will be presented with a menu to select the operation:
 
 - If you choose commit, TagMaster will guide you through creating a conventional commit, including specifying the commit type, scope, description, breaking changes, and associated issue references. It will generate a commit message based on your input.
 
-- If you choose release, TagMaster allows you to easily create different types of releases such as major, minor, and patch. You can also create pre-releases like alpha and beta. TagMaster will create a new release, update the version and generate a CHANGELOG.md file.
+- If you choose release, TagMaster allows you to easily create different types of releases such as major, minor, and patch. You can also create pre-releases like alpha and beta. TagMaster will update the version, generate a CHANGELOG.md file that documents all the changes made in the release, and push the changes and tags to your repository.
 
 - If you choose license, TagMaster will generate a LICENSE file for your project. You can choose from a variety of licenses such as MIT, Apache, GPL, etc. It provides clarity on the licensing terms of your code.
-
-Remember to push your code to your repository after using TagMaster release:
-
-```
-git push origin main && git push --tags
-```
 
 For more detailed information, advanced usage, and customization options, please refer to the [documentation](https://github.com/Imraan-Hendricks/tagmaster).
 
 ### Contributing
 
-Contributions are always welcome! If you encounter any issues, have suggestions, or want to contribute improvements, please open an issue or submit a pull request in the GitHub repository.
+Contributions are always welcome! If you encounter any issues, have suggestions, or want to contribute improvements, please open an issue or submit a pull request in the [Github](https://github.com/Imraan-Hendricks/tagmaster) repository.
 
 ### Support
 
@@ -83,4 +77,4 @@ If you have any questions, issues, or need assistance, please feel free to reach
 
 ### License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/Imraan-Hendricks/tagmaster/blob/main/LICENSE).
