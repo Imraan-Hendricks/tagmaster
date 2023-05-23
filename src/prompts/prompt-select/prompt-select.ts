@@ -1,4 +1,4 @@
-import { prompt } from './prompt';
+import { prompt } from '../prompt/prompt';
 
 interface Option<T> {
   ref: string;

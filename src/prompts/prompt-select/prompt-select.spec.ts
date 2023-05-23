@@ -1,7 +1,7 @@
 import { promptSelect } from './prompt-select';
-import { prompt } from './prompt';
+import { prompt } from '../prompt/prompt';
 
-jest.mock('./prompt');
+jest.mock('../prompt/prompt');
 
 describe('promptSelect', () => {
   let consoleSpy: jest.SpyInstance;

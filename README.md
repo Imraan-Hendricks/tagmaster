@@ -69,7 +69,7 @@ For more detailed information, advanced usage, and customization options, please
 
 ### Contributing
 
-Contributions are always welcome! If you encounter any issues, have suggestions, or want to contribute improvements, please open an issue or submit a pull request in the [Github](https://github.com/Imraan-Hendricks/tagmaster) repository.
+Contributions are always welcome! If you encounter any issues, have suggestions, or want to contribute improvements, please open an issue or submit a pull request in the [Github repository](https://github.com/Imraan-Hendricks/tagmaster).
 
 ### Support
 
