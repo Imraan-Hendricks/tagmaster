@@ -52,6 +52,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "dev": "npm run build && node ./bin/tagmaster",
     "lint:audit": "eslint",
     "lint:fix": "eslint --fix",
     "prettier:audit": "prettier",

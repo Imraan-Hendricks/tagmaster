@@ -1,3 +1,3 @@
 export async function release() {
-  return;
+  return console.log('Release feature coming soon!');
 }

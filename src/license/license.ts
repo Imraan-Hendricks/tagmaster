@@ -1,3 +1,3 @@
 export async function license() {
-  return;
+  return console.log('License feature coming soon!');
 }

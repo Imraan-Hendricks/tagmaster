@@ -7,11 +7,6 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
 
-  clearMocks: true,
-  resetMocks: true,
-  resetModules: true,
-  restoreMocks: true,
-
-  silent: false,
+  silent: true,
   verbose: true,
 };

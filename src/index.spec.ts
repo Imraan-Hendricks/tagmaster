@@ -1,81 +1,72 @@
 import main from './';
+import { commit } from './commit/commit';
+import { release } from './release/release';
+import { license } from './license/license';
 import { promptSelect } from './prompts/prompt-select/prompt-select';
-import * as commitModule from './commit/commit';
-import * as releaseModule from './release/release';
-import * as licenseModule from './license/license';
 
+jest.mock('./commit/commit');
+jest.mock('./release/release');
+jest.mock('./license/license');
 jest.mock('./prompts/prompt-select/prompt-select');
 
-jest.mock('./commit/commit', () => ({
-  commit: jest.fn(),
-}));
-
-jest.mock('./release/release', () => ({
-  release: jest.fn(),
-}));
-
-jest.mock('./license/license', () => ({
-  license: jest.fn(),
-}));
+const mockCommit = commit as jest.Mock;
+const mockRelease = release as jest.Mock;
+const mockLicense = license as jest.Mock;
+const mockPromptSelect = promptSelect as jest.Mock;
 
 describe('main', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
 
-  it('should call commit function when action is "commit"', async () => {
-    const mockAction = 'commit';
-    (promptSelect as jest.Mock).mockResolvedValue(mockAction);
-
-    const commitSpy = jest.spyOn(commitModule, 'commit');
-    const releaseSpy = jest.spyOn(releaseModule, 'release');
-    const licenseSpy = jest.spyOn(licenseModule, 'license');
-
-    await main();
-
-    expect(commitSpy).toHaveBeenCalled();
-    expect(releaseSpy).not.toHaveBeenCalled();
-    expect(licenseSpy).not.toHaveBeenCalled();
+  afterAll(() => {
+    jest.resetAllMocks();
   });
 
-  it('should call release function when action is "release"', async () => {
-    const mockAction = 'release';
-    (promptSelect as jest.Mock).mockResolvedValue(mockAction);
+  describe('menu', () => {
+    it('should call commit function when action is "commit"', async () => {
+      const mockAction = 'commit';
+      mockPromptSelect.mockResolvedValue(mockAction);
 
-    const commitSpy = jest.spyOn(commitModule, 'commit');
-    const releaseSpy = jest.spyOn(releaseModule, 'release');
-    const licenseSpy = jest.spyOn(licenseModule, 'license');
+      await main();
 
-    await main();
+      expect(mockCommit).toHaveBeenCalled();
+      expect(mockRelease).not.toHaveBeenCalled();
+      expect(mockLicense).not.toHaveBeenCalled();
+    });
 
-    expect(commitSpy).not.toHaveBeenCalled();
-    expect(releaseSpy).toHaveBeenCalled();
-    expect(licenseSpy).not.toHaveBeenCalled();
-  });
+    it('should call release function when action is "release"', async () => {
+      const mockAction = 'release';
+      mockPromptSelect.mockResolvedValue(mockAction);
 
-  it('should call license function when action is "license"', async () => {
-    const mockAction = 'license';
-    (promptSelect as jest.Mock).mockResolvedValue(mockAction);
+      await main();
 
-    const commitSpy = jest.spyOn(commitModule, 'commit');
-    const releaseSpy = jest.spyOn(releaseModule, 'release');
-    const licenseSpy = jest.spyOn(licenseModule, 'license');
+      expect(mockCommit).not.toHaveBeenCalled();
+      expect(mockRelease).toHaveBeenCalled();
+      expect(mockLicense).not.toHaveBeenCalled();
+    });
 
-    await main();
+    it('should call license function when action is "license"', async () => {
+      const mockAction = 'license';
+      mockPromptSelect.mockResolvedValue(mockAction);
 
-    expect(commitSpy).not.toHaveBeenCalled();
-    expect(releaseSpy).not.toHaveBeenCalled();
-    expect(licenseSpy).toHaveBeenCalled();
+      await main();
+
+      expect(mockCommit).not.toHaveBeenCalled();
+      expect(mockRelease).not.toHaveBeenCalled();
+      expect(mockLicense).toHaveBeenCalled();
+    });
   });
 
   it('should display error message and exit when action is unknown', async () => {
     const mockAction = 'unknown';
-    (promptSelect as jest.Mock).mockResolvedValue(mockAction);
+    mockPromptSelect.mockResolvedValue(mockAction);
 
     const consoleErrorSpy = jest.spyOn(console, 'error');
     const processExitSpy = jest
       .spyOn(process, 'exit')
       .mockImplementation(jest.fn<never, [number?]>());
+
     await main();
 
     expect(consoleErrorSpy).toHaveBeenCalled();
