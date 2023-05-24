@@ -20,8 +20,8 @@ describe('readScope', () => {
 
     const result = await readScope();
 
-    expect(prompt).toHaveBeenCalledWith('Enter your scope: ');
-    expect(prompt).toHaveBeenCalledTimes(1);
+    expect(mockPrompt).toHaveBeenCalledWith('Enter your scope: ');
+    expect(mockPrompt).toHaveBeenCalledTimes(1);
 
     expect(result).toEqual(mockScope);
   });
