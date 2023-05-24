@@ -24,7 +24,7 @@ export async function promptSelect<T extends string>(
       action = filtered[0].action;
       break;
     }
-    option = await prompt('Please enter a valid number as your choice: ');
+    option = await prompt('Please enter a valid option as your choice: ');
   }
 
   return action;
