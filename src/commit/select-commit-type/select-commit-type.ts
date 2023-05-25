@@ -1,7 +1,7 @@
 import { promptSelect } from '../../prompts/prompt-select/prompt-select';
 
 export async function selectCommitType() {
-  const commitType = await promptSelect('Select a commit type:', [
+  const type = await promptSelect('Select a commit type:', [
     { ref: '1', action: 'feat', description: 'A new feature' },
     { ref: '2', action: 'fix', description: 'A bug fix' },
     { ref: '3', action: 'docs', description: 'Documentation changes' },
@@ -18,5 +18,7 @@ export async function selectCommitType() {
     },
     { ref: '11', action: 'revert', description: 'Revert a previous commit' },
   ]);
-  return commitType;
+
+  console.log(type + '\n');
+  return type;
 }

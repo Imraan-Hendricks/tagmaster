@@ -5,5 +5,7 @@ export async function readScope() {
     'What is the scope of this change (e.g. component or file name): (press enter to skip)',
   );
   const scope = await prompt('Enter your scope: ');
+
+  console.log(scope ? '' : 'Skipped!\n');
   return scope;
 }

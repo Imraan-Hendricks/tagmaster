@@ -13,5 +13,7 @@ export async function selectBreakingChange() {
       description: 'The change is backwards-compatible',
     },
   ]);
+
+  console.log(breakingChange + '\n');
   return breakingChange;
 }

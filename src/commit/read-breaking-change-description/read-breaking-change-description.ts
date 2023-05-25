@@ -1,12 +1,19 @@
 import { prompt } from '../../prompts/prompt/prompt';
 
-export async function readBreakingChangeDescription() {
-  console.log('Describe the breaking changes:');
-  let breakingChangeDescription = await prompt('Enter description: ');
+export async function readBreakingChangeDescription(
+  breakingChange: 'yes' | 'no',
+) {
+  let breakingChangeDescription: string | undefined;
 
-  while (!breakingChangeDescription) {
-    console.log('\nBreaking change description is required!');
+  if (breakingChange === 'yes') {
+    console.log('Describe the breaking changes:');
     breakingChangeDescription = await prompt('Enter description: ');
+
+    while (!breakingChangeDescription) {
+      console.log('\nBreaking change description is required!');
+      breakingChangeDescription = await prompt('Enter description: ');
+    }
+    console.log();
   }
 
   return breakingChangeDescription;

@@ -11,36 +11,17 @@ import { readScope } from './read-scope/read-scope';
 
 export async function commit() {
   const type = await selectCommitType();
-  console.log(type + '\n');
-
   const scope = await readScope();
-  console.log(scope ? '' : 'Skipped!\n');
-
   const shortDescription = await readShortDescription();
-  console.log();
-
   const longDescription = await readLongDescription();
-  console.log(longDescription ? '' : 'Skipped!\n');
-
   const breakingChange = await selectBreakingChange();
-  console.log(breakingChange + '\n');
-
-  let breakingChangeDescription: string | undefined;
-  if (breakingChange === 'yes') {
-    breakingChangeDescription = await readBreakingChangeDescription();
-    console.log();
-  }
-
+  const breakingChangeDescription = await readBreakingChangeDescription(
+    breakingChange,
+  );
   const openIssue = await selectOpenIssue();
-  console.log(openIssue + '\n');
+  const openIssueReference = await readOpenIssueReference(openIssue);
 
-  let openIssueReference: string | undefined;
-  if (openIssue === 'yes') {
-    openIssueReference = await readOpenIssueReference();
-    console.log();
-  }
-
-  commitSummary({
+  const commitData = {
     type,
     scope,
     shortDescription,
@@ -49,8 +30,8 @@ export async function commit() {
     breakingChangeDescription,
     openIssue,
     openIssueReference,
-  });
+  };
 
-  const commitConfirmation = await selectCommitConfirmation();
-  console.log(commitConfirmation + '\n');
+  commitSummary(commitData);
+  await selectCommitConfirmation();
 }

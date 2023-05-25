@@ -16,5 +16,11 @@ export async function selectCommitConfirmation() {
       },
     ],
   );
-  return commitConfirmation;
+
+  console.log(commitConfirmation + '\n');
+
+  if (commitConfirmation === 'no') {
+    console.log('Commit cancelled. No changes have been committed.');
+    process.exit(0);
+  }
 }

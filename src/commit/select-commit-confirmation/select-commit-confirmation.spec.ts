@@ -36,12 +36,17 @@ describe('selectCommitConfirmation', () => {
       ],
     );
 
-    expect(result).toEqual('yes');
+    expect(result).toEqual(undefined);
   });
 
   it('should return "no" when "no" is selected', async () => {
     const mockSelectedAction = 'no';
     mockPromptSelect.mockResolvedValueOnce(mockSelectedAction);
+
+    const consoleLogSpy = jest.spyOn(console, 'log');
+    const processExitSpy = jest
+      .spyOn(process, 'exit')
+      .mockImplementation(jest.fn<never, [number?]>());
 
     const result = await selectCommitConfirmation();
 
@@ -61,6 +66,11 @@ describe('selectCommitConfirmation', () => {
       ],
     );
 
-    expect(result).toEqual('no');
+    expect(result).toEqual(undefined);
+
+    expect(consoleLogSpy).toHaveBeenCalledWith(
+      'Commit cancelled. No changes have been committed.',
+    );
+    expect(processExitSpy).toHaveBeenCalledWith(0);
   });
 });

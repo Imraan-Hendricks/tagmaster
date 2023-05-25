@@ -75,7 +75,7 @@ describe('commit', () => {
     expect(mockReadShortDescription).toHaveBeenCalledTimes(1);
     expect(mockReadLongDescription).toHaveBeenCalledTimes(1);
     expect(mockSelectBreakingChange).toHaveBeenCalledTimes(1);
-    expect(mockReadBreakingChangeDescription).toHaveBeenCalledTimes(0);
+    expect(mockReadBreakingChangeDescription).toHaveBeenCalledTimes(1);
     expect(mockSelectOpenIssue).toHaveBeenCalledTimes(1);
     expect(mockReadOpenIssueReference).toHaveBeenCalledTimes(1);
     expect(mockCommitSummary).toHaveBeenCalledWith({

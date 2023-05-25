@@ -16,5 +16,7 @@ export async function selectOpenIssue() {
       },
     ],
   );
+
+  console.log(openIssue + '\n');
   return openIssue;
 }

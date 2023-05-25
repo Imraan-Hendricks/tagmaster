@@ -11,5 +11,6 @@ export async function readShortDescription() {
     shortDescription = await prompt('Enter short description: ');
   }
 
+  console.log();
   return shortDescription;
 }
