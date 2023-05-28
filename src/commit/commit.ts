@@ -8,6 +8,7 @@ import { readOpenIssueReference } from './read-open-issue-reference/read-open-is
 import { readBreakingChangeDescription } from './read-breaking-change-description/read-breaking-change-description';
 import { readLongDescription } from './read-long-description/read-long-description';
 import { readScope } from './read-scope/read-scope';
+import { performCommit } from './perform-commit/perform-commit';
 
 export async function commit() {
   const type = await selectCommitType();
@@ -34,4 +35,6 @@ export async function commit() {
 
   commitSummary(commitData);
   await selectCommitConfirmation();
+
+  performCommit(commitData);
 }
