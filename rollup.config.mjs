@@ -2,6 +2,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import dts from 'rollup-plugin-dts';
 import deletePlugin from 'rollup-plugin-delete';
 import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import { babel } from '@rollup/plugin-babel';
 
@@ -28,6 +29,7 @@ export default [
       typescript({ tsconfig: './tsconfig.json' }),
       babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
       deletePlugin({ targets: 'dist/*' }),
+      terser(),
     ],
   },
   {
