@@ -32,7 +32,7 @@ export async function commit() {
     openIssue,
     openIssueReference,
   };
-
+  // add commit linting here
   commitSummary(commitData);
   await selectCommitConfirmation();
 

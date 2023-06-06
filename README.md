@@ -61,7 +61,7 @@ You will be presented with a menu to select the operation:
 
 - If you choose commit, TagMaster will guide you through creating a conventional commit, including specifying the commit type, scope, description, breaking changes, and associated issue references. It will generate a commit message based on your input.
 
-- If you choose release, TagMaster allows you to easily create different types of releases such as major, minor, and patch. You can also create pre-releases like alpha and beta. TagMaster will update the version, generate a CHANGELOG.md file that documents all the changes made in the release, and push the changes and tags to your repository.
+- If you choose release, TagMaster allows you to easily create different types of releases such as major, minor, and patch. You can also create pre-releases like alpha and beta. TagMaster will update the version and generate a CHANGELOG.md file that documents all the changes made in the release, having you ready to push the changes and tags to your repository.
 
 - If you choose license, TagMaster will generate a LICENSE file for your project. You can choose from a variety of licenses such as MIT, Apache, GPL, etc. It provides clarity on the licensing terms of your code.
 
